@@ -1,8 +1,6 @@
 {
   "name": "softuni-social-network",
-  "version": "1.0.0",
   "description": "Softuni.bg university project. A social network on AngularJS with comments and such.",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
