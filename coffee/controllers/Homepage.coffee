@@ -1,16 +1,15 @@
-Homepage = (Session, $window) ->
+Homepage = (Session, Auth) ->
 
   @login = (username, password) ->
     session = Session.save
       username: username
       password: password
       () ->
-        $window.localStorage.setItem('accessToken', session.access_token)
-        $window.localStorage.setItem('userName', session.username)
+        Auth.setFromSession session
 
   return
 
-Homepage.$inject = ['Session', '$window']
+Homepage.$inject = ['Session', 'Auth']
 
 angular
   .module('socialapp')
