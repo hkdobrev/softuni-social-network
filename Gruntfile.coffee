@@ -19,6 +19,8 @@ module.exports = (grunt)->
   # Config
   ###############################################################
 
+  modRewrite = require 'connect-modrewrite'
+
   grunt.initConfig
 
     clean:
@@ -44,7 +46,20 @@ module.exports = (grunt)->
     connect:
       server:
         options:
+          port: 8000
+          livereload: 35729
+          hostname: 'localhost'
           base: './'
+          middleware: (connect, options) ->
+            middlewares = []
+
+            # Matches everything that does not contain a '.' (period)
+            middlewares.push modRewrite(['^[^\\.]*$ /index.html [L]'])
+            results = (connect.static base for base in options.base)
+
+            [].push.apply middlewares, results
+
+            middlewares
 
     watch:
       coffee:
