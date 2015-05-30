@@ -1,9 +1,9 @@
 routesConfig = ($routeProvider) ->
   $routeProvider
     .when '/',
-      templateUrl: 'views/homepage.html'
-      controller: 'Homepage'
-      controllerAs: 'Homepage'
+      templateUrl: 'views/feed.html'
+      controller: 'FeedCtrl'
+      controllerAs: 'FeedCtrl'
 
     .when '/login',
       templateUrl: 'views/auth.html'
