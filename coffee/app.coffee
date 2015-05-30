@@ -17,7 +17,7 @@ app.run [
   'Auth'
   ($rootScope, $location, Auth) ->
     $rootScope.$on '$routeChangeStart', (event) ->
-      if not Auth.isLoggedIn() and $location.path() isnt '/'
+      if not Auth.isLoggedIn() and $location.path() isnt '/login'
         event.preventDefault()
-        $location.path '/'
+        $location.path '/login'
 ]
