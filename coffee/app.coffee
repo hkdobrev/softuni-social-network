@@ -5,6 +5,12 @@ app = angular.module 'socialapp', [
 
 app.value 'BASE', 'http://softuni-social-network.azurewebsites.net/api'
 
+app.config [
+  '$locationProvider'
+  ($locationProvider) ->
+    $locationProvider.html5Mode true
+]
+
 app.run [
   '$rootScope'
   '$location'
