@@ -1,8 +1,9 @@
 routesConfig = ($routeProvider) ->
   $routeProvider
     .when '/',
-      templateUrl: 'views/index.html'
-      controller: 'Homepage as home'
+      templateUrl: 'views/homepage.html'
+      controller: 'Homepage'
+      controllerAs: 'Homepage'
 
 routesConfig.$inject = ['$routeProvider']
 
