@@ -11,6 +11,12 @@ app.config [
     $locationProvider.html5Mode true
 ]
 
+app.config [
+  '$httpProvider'
+  ($httpProvider) ->
+    $httpProvider.defaults.cache = true
+]
+
 app.run [
   '$rootScope'
   '$location'
