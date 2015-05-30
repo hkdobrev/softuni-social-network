@@ -4,15 +4,16 @@ module.exports = (grunt)->
   # Constants
   ###############################################################
 
-  SRC_COFFEE_DIR = 'coffee'
-  TARGET_JS_DIR  = 'js'
+  SRC_COFFEE_DIR     = 'coffee'
+  TARGET_JS_DIR      = 'js'
+  TARGET_JS_MAPS_DIR = "#{TARGET_JS_DIR}/maps"
 
-  SRC_CSS_DIR    = 'css'
+  SRC_CSS_DIR        = 'css'
 
-  INDEX_HTML     = 'index.html'
-  VIEWS_DIR      = 'views'
+  INDEX_HTML         = 'index.html'
+  VIEWS_DIR          = 'views'
 
-  GRUNTFILE      = 'Gruntfile.coffee'
+  GRUNTFILE          = 'Gruntfile.coffee'
 
   ###############################################################
   # Config
@@ -36,6 +37,9 @@ module.exports = (grunt)->
         src: '**/*.coffee'
         dest: TARGET_JS_DIR
         ext: '.js'
+        options:
+          sourceMap: true
+          sourceMapDir: TARGET_JS_MAPS_DIR
 
     connect:
       server:
