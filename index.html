@@ -5,9 +5,13 @@
     <title>SoftUni Social Network by Haralan Dobrev</title>
     <base href="/">
     <style>.ng-cloak {display: none}</style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.css">
 </head>
 <body class="ng-cloak">
-    <ng-view></ng-view>
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
     <script src="node_modules/angular-resource/angular-resource.js"></script>
@@ -18,6 +22,5 @@
     <script src="js/services/Auth.js"></script>
     <script src="js/controllers/HomepageCtrl.js"></script>
     <script src="js/controllers/AuthCtrl.js"></script>
-    <script src="//localhost:35729/livereload.js"></script>
 </body>
 </html>
