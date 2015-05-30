@@ -21,3 +21,14 @@ app.run [
         event.preventDefault()
         $location.path '/login'
 ]
+
+app.run [
+  'Auth'
+  '$http'
+  (Auth, $http) ->
+    if Auth.getAccessToken()
+      $http.defaults.headers.common
+          .Authorization = 'Bearer ' + Auth.getAccessToken()
+
+    return
+]
