@@ -47,6 +47,8 @@ module.exports = (grunt)->
         cwd: SRC_COFFEE_DIR
         files: '**/*.coffee'
         tasks: ['buildcoffee']
+        options:
+          livereload: true
 
       Gruntfile:
         files: GRUNTFILE
@@ -59,7 +61,7 @@ module.exports = (grunt)->
           INDEX_HTML,
           "#{VIEWS_DIR}/**/*.html"
         ]
-        tasks: []
+        tasks: ['noop']
         options:
           livereload: true
 
@@ -80,5 +82,7 @@ module.exports = (grunt)->
   grunt.registerTask('build', ['coffeelint::Gruntfile', 'buildcoffee'])
   grunt.registerTask('watcher', ['connect', 'watch'])
   grunt.registerTask('dist', ['build'])
+
+  grunt.registerTask('noop', [])
 
   grunt.registerTask('default', ['clean','build'])
