@@ -7,7 +7,7 @@
   "author": "Haralan Dobrev",
   "license": "MIT",
   "dependencies": {
-    "angular": "^1.3.15",
+    "angular": "^1.4.0",
     "angular-resource": "^1.4.0",
     "angular-route": "^1.4.0",
     "coffeelint": "^1.9.7",
