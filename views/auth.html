@@ -1,0 +1,14 @@
+<form ng-submit="AuthCtrl.login(loginUsername, loginPassword)" method="POST">
+    <input type="text" name="username" ng-model="loginUsername">
+    <input type="password" name="password" ng-model="loginPassword">
+    <button type="submit">Log in</button>
+</form>
+
+<form ng-submit="AuthCtrl.register(username, password, confirmPassword, name, email)" method="POST">
+    <input type="text" name="username" ng-model="username">
+    <input type="password" name="password" ng-model="password">
+    <input type="password" name="confirmPassword" ng-model="confirmPassword">
+    <input type="text" name="name" ng-model="name">
+    <input type="email" name="email" ng-model="email">
+    <button type="submit">Register</button>
+</form>

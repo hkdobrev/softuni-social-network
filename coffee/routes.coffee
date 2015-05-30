@@ -6,9 +6,9 @@ routesConfig = ($routeProvider) ->
       controllerAs: 'Homepage'
 
     .when '/login',
-      templateUrl: 'views/login.html'
-      controller: 'Login'
-      controllerAs: 'Login'
+      templateUrl: 'views/auth.html'
+      controller: 'AuthCtrl'
+      controllerAs: 'AuthCtrl'
 
 routesConfig.$inject = ['$routeProvider']
 
