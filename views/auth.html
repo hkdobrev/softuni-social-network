@@ -8,6 +8,9 @@
             <label for="loginPassword" class="col-xs-3">Password</label>
             <input id="loginPassword" type="password" name="password" ng-model="loginPassword" required>
         </div>
+        <div ng-if="AuthCtrl.loginError">
+          <p style="color: red">{{AuthCtrl.loginError}}</p>
+        </div>
         <button type="submit" class="btn btn-default">Log in</button>
     </form>
 
@@ -31,6 +34,9 @@
         <div class="form-group">
             <label for="email" class="col-xs-4">Email</label>
             <input id="email" type="email" name="email" ng-model="email" required>
+        </div>
+        <div ng-if="AuthCtrl.registerError">
+          <p style="color: red">{{AuthCtrl.registerError}}</p>
         </div>
         <button type="submit" class="btn btn-primary">Register</button>
     </form>

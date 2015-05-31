@@ -1,16 +1,18 @@
 AuthCtrl = (Session, Auth, UserRegister, $location) ->
 
-  @login = (username, password) ->
+  @login = (username, password) =>
     session = Session.save
       username: username
       password: password
       () ->
         Auth.setFromSession session
         $location.path '/'
+      (httpResponse) =>
+        @loginError = httpResponse.data.error_description
 
     return
 
-  @register = (username, password, confirmPassword, name, email) ->
+  @register = (username, password, confirmPassword, name, email) =>
     session = UserRegister.save
       username: username
       password: password
@@ -20,6 +22,8 @@ AuthCtrl = (Session, Auth, UserRegister, $location) ->
       () ->
         Auth.setFromSession session
         $location.path '/'
+      (httpResponse) =>
+        @registerError = httpResponse.data.message
 
     return
 
