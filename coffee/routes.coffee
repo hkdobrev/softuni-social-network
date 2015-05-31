@@ -10,6 +10,9 @@ routesConfig = ($routeProvider) ->
       controller: 'AuthCtrl'
       controllerAs: 'AuthCtrl'
 
+    .otherwise
+      redirectTo: '/'
+
 routesConfig.$inject = ['$routeProvider']
 
 angular

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.css">
 </head>
 <body class="ng-cloak">
+    <a href="logout" ng-if="isLoggedIn" ng-click="logout()">Log out</a>
     <div class="container">
         <ng-view></ng-view>
     </div>
