@@ -1,8 +1,11 @@
-HeaderCtrl = () ->
+HeaderCtrl = (Me, FriendRequest) ->
+
+  @me = Me.get()
+  @requests = FriendRequest.query()
 
   return
 
-HeaderCtrl.$inject = []
+HeaderCtrl.$inject = ['Me', 'FriendRequest']
 
 angular
   .module('socialapp')

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
 </head>
 <body class="ng-cloak">
-  <div ng-if="isLoggedIn" ng-include="'includes/header.html'" ng-controller="HeaderCtrl as header"></div>
+  <div ng-if="isLoggedIn" ng-include="'includes/header.html'"></div>
   <div class="container">
     <ng-view></ng-view>
   </div>
@@ -25,6 +25,10 @@
   <script src="js/resources/Session.js"></script>
   <script src="js/resources/UserRegister.js"></script>
   <script src="js/resources/Feed.js"></script>
+  <script src="js/resources/Me.js"></script>
+  <script src="js/resources/Friends.js"></script>
+  <script src="js/resources/FriendRequests.js"></script>
+  <script src="js/resources/FriendRequestUpdate.js"></script>
   <script src="js/services/UnauthorizedInterceptor.js"></script>
   <script src="js/services/Auth.js"></script>
   <script src="js/controllers/FeedCtrl.js"></script>
