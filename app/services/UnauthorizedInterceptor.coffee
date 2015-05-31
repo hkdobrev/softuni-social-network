@@ -1,4 +1,4 @@
-UnauthorizedInterceptor = (
+UnauthorizedInterceptorProvider = (
   $rootScope,
   $q,
   $injector,
@@ -15,7 +15,7 @@ UnauthorizedInterceptor = (
     $q.reject rejection
 
 
-UnauthorizedInterceptor.$inject = [
+UnauthorizedInterceptorProvider.$inject = [
   '$rootScope'
   '$q'
   '$injector'
@@ -25,4 +25,4 @@ UnauthorizedInterceptor.$inject = [
 
 angular
   .module('socialapp')
-  .factory('UnauthorizedInterceptor', UnauthorizedInterceptor)
+  .factory('UnauthorizedInterceptor', UnauthorizedInterceptorProvider)
