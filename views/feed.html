@@ -1,3 +1,25 @@
+<form
+ method="POST"
+ ng-submit="FeedCtrl.createOwnPost(content); content = ''; success = true"
+ class="form-inline">
+  <div class="form-group">
+    <textarea
+     name="content"
+     ng-model="content"
+     cols="120"
+     rows="2"
+     class="form-control"
+     autofocus
+     placeholder="What's on your mind?"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary btn-lg">Post on your wall</button>
+</form>
+<br>
+<div ng-if="success" class="alert alert-success alert-dismissable fade in" role="alert">
+  Congratulations, you've just published a new post! Your friends are seeing it in there feeds now.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+
 <h1>News Feed</h1>
 
 <ol reversed>
