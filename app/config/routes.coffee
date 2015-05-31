@@ -1,3 +1,9 @@
+userResolver = ($route, User) ->
+  User.get
+    username: $route.current.params.username
+
+userResolver.$inejct = ['$route', 'User']
+
 routesConfig = ($routeProvider) ->
   $routeProvider
     .when '/',
@@ -9,6 +15,13 @@ routesConfig = ($routeProvider) ->
       templateUrl: 'views/auth.html'
       controller: 'AuthCtrl'
       controllerAs: 'AuthCtrl'
+
+    .when '/users/:username',
+      templateUrl: 'views/user.html'
+      controller: 'UserCtrl'
+      controllerAs: 'UserCtrl'
+      resolve:
+        user: userResolver
 
     .otherwise
       redirectTo: '/'

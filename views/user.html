@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-sm-3 col-xs-12">
+    <figure>
+      <img ng-src="data:image/JPEG;base64,{{UserCtrl.user.profileImageData}}" ng-if="UserCtrl.user.profileImageData" alt="Profile image">
+      <span class="glyphicon glyphicon-user" ng-if="!UserCtrl.user.profileImageData"></span>
+      <figcaption>
+        {{UserCtrl.user.name}}
+      </figcaption>
+    </figure>
+    <p>{{UserCtrl.user.email}}</p>
+  </div>
+  <div class="col-sm-9 col-xs-12">
+    <ol reversed class="list-unstyled">
+        <li ng-repeat="(id, post) in UserCtrl.posts">
+          <div class="row">
+            <div class="col-xs-2">
+              <img ng-src="data:image/JPEG;base64,{{post.author.profileImageData}}" ng-if="post.author.profileImageData" alt="Profile image">
+              <span class="glyphicon glyphicon-user" ng-if="!post.author.profileImageData"></span>
+            </div>
+            <div class="col-xs-6">
+              {{post.postContent}}
+            </div>
+          </div>
+        </li>
+    </ol>
+
+  </div>
+</div>

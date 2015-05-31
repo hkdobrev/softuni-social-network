@@ -22,8 +22,18 @@
 
 <h1>News Feed</h1>
 
-<ol reversed>
+<hr class="split">
+
+<ol reversed class="list-unstyled">
     <li ng-repeat="(id, post) in FeedCtrl.posts">
-        {{post.postContent}}
+      <div class="row">
+        <div class="col-xs-2">
+          <img ng-src="data:image/JPEG;base64,{{post.author.profileImageData}}" ng-if="post.author.profileImageData" alt="Profile image">
+          <span class="glyphicon glyphicon-user" ng-if="!post.author.profileImageData"></span>
+        </div>
+        <div class="col-xs-6">
+          {{post.postContent}}
+        </div>
+      </div>
     </li>
 </ol>
