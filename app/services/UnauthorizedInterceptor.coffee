@@ -10,6 +10,7 @@ UnauthorizedInterceptorProvider = (
     rejection.data.message == 'Session token expired or not valid.'
       $window.localStorage.removeItem 'accessToken'
       $window.localStorage.removeItem 'username'
+      $rootScope.isLoggedIn = false
       $location.path '/login'
 
     $q.reject rejection
