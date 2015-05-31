@@ -4,7 +4,7 @@ module.exports = (grunt)->
   # Constants
   ###############################################################
 
-  SRC_COFFEE_DIR     = 'coffee'
+  SRC_COFFEE_DIR     = 'app'
   TARGET_JS_DIR      = 'js'
   TARGET_JS_MAPS_DIR = "#{TARGET_JS_DIR}/maps"
 
