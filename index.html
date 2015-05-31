@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.css">
 </head>
 <body class="ng-cloak">
+    <div ng-include="'includes/header.html'" ng-controller="HeaderCtrl as header"></div>
     <a href="logout" ng-if="isLoggedIn" ng-click="logout()">Log out</a>
     <div class="container">
         <ng-view></ng-view>
@@ -29,5 +30,8 @@
     <script src="js/services/Auth.js"></script>
     <script src="js/controllers/FeedCtrl.js"></script>
     <script src="js/controllers/AuthCtrl.js"></script>
+    <script src="js/controllers/HeaderCtrl.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>

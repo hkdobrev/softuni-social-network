@@ -12,6 +12,7 @@ module.exports = (grunt)->
 
   INDEX_HTML         = 'index.html'
   VIEWS_DIR          = 'views'
+  INCLUDES_DIR       = 'includes'
 
   GRUNTFILE          = 'Gruntfile.coffee'
 
@@ -75,10 +76,11 @@ module.exports = (grunt)->
 
       assets:
         files: [
-          "#{TARGET_JS_DIR}/**/*.js",
-          "#{SRC_CSS_DIR}/**/*.css",
-          INDEX_HTML,
+          "#{TARGET_JS_DIR}/**/*.js"
+          "#{SRC_CSS_DIR}/**/*.css"
+          INDEX_HTML
           "#{VIEWS_DIR}/**/*.html"
+          "#{INCLUDES_DIR}/**/*.html"
         ]
         tasks: ['noop']
         options:
