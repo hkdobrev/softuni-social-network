@@ -28,9 +28,3 @@ app.run [
         event.preventDefault()
         $location.path '/login'
 ]
-
-app.run [
-  'Auth'
-  (Auth) ->
-    Auth.setAuthorizationHeader()
-]
