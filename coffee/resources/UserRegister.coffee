@@ -1,8 +1,8 @@
+UserRegisterProvider = ($resource, BASE) ->
+  $resource "#{BASE}/users/register"
+
+UserRegisterProvider.$inject = ['$resource', 'BASE']
+
 angular
   .module('socialapp')
-  .factory 'UserRegister', [
-    '$resource',
-    'BASE'
-    ($resource, BASE) ->
-      $resource "#{BASE}/users/register"
-  ]
+  .factory('UserRegister', UserRegisterProvider)
