@@ -9,8 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.css">
 </head>
 <body class="ng-cloak">
-  <div ng-include="'includes/header.html'" ng-controller="HeaderCtrl as header"></div>
-  <a href="logout" ng-if="isLoggedIn" ng-click="logout()">Log out</a>
+  <div ng-if="isLoggedIn" ng-include="'includes/header.html'" ng-controller="HeaderCtrl as header"></div>
   <div class="container">
     <ng-view></ng-view>
   </div>
