@@ -1,37 +1,32 @@
-Auth = ($window) ->
-  username = $window.localStorage.getItem 'username'
-  accessToken = $window.localStorage.getItem 'accessToken'
-
-  saveToStorage = () ->
-    $window.localStorage.setItem 'accessToken', accessToken
-    $window.localStorage.setItem 'userName', username
-
-  removeFromStorage = () ->
-    $window.localStorage.removeItem 'accessToken'
-    $window.localStorage.removeItem 'userName'
+Auth = ($window, $http) ->
 
   @isLoggedIn = () ->
-    !!accessToken
+    !!@getAccessToken()
 
   @getUsername = () ->
-    username
+    $window.localStorage.getItem 'username'
 
   @getAccessToken = () ->
-    accessToken
+    $window.localStorage.getItem 'accessToken'
 
-  @setFromSession = (Session) ->
-    username = Session.userName
-    accessToken = Session.access_token
-    saveToStorage()
+  @setFromSession = (session) ->
+    $window.localStorage.setItem 'accessToken', session.access_token
+    $window.localStorage.setItem 'username', session.userName
+    @setAuthorizationHeader()
 
   @destroy = () ->
-    username = null
-    accessToken = null
-    removeFromStorage()
+    $window.localStorage.removeItem 'accessToken'
+    $window.localStorage.removeItem 'username'
+    $http.defaults.headers.common.Authorization = undefined
+
+  @setAuthorizationHeader = (accessToken) ->
+    accessToken = accessToken or @getAccessToken()
+    if accessToken
+      $http.defaults.headers.common.Authorization = 'Bearer ' + accessToken
 
   this
 
-Auth.$inject = ['$window']
+Auth.$inject = ['$window', '$http']
 
 angular
   .module('socialapp')

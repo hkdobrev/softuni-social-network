@@ -5,8 +5,11 @@ AuthCtrl = (Session, Auth, UserRegister, $location) ->
       username: username
       password: password
       () ->
+        console.log session
         Auth.setFromSession session
         $location.path '/'
+
+    return
 
   @register = (username, password, confirmPassword, name, email) ->
     session = UserRegister.save
@@ -18,6 +21,8 @@ AuthCtrl = (Session, Auth, UserRegister, $location) ->
       () ->
         Auth.setFromSession session
         $location.path '/'
+
+    return
 
   return
 

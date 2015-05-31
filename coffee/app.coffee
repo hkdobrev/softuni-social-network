@@ -15,6 +15,7 @@ app.config [
   '$httpProvider'
   ($httpProvider) ->
     $httpProvider.defaults.cache = true
+    $httpProvider.interceptors.push 'UnauthorizedInterceptor'
 ]
 
 app.run [
@@ -30,11 +31,6 @@ app.run [
 
 app.run [
   'Auth'
-  '$http'
-  (Auth, $http) ->
-    if Auth.getAccessToken()
-      $http.defaults.headers.common
-          .Authorization = 'Bearer ' + Auth.getAccessToken()
-
-    return
+  (Auth) ->
+    Auth.setAuthorizationHeader()
 ]
