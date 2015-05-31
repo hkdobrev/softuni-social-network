@@ -5,7 +5,6 @@ AuthCtrl = (Session, Auth, UserRegister, $location) ->
       username: username
       password: password
       () ->
-        console.log session
         Auth.setFromSession session
         $location.path '/'
 
