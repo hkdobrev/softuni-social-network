@@ -5,8 +5,8 @@
   <title>SoftUni Social Network by Haralan Dobrev</title>
   <base href="/">
   <style>.ng-cloak {display: none}</style>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
 </head>
 <body class="ng-cloak">
   <div ng-if="isLoggedIn" ng-include="'includes/header.html'" ng-controller="HeaderCtrl as header"></div>
@@ -30,7 +30,8 @@
   <script src="js/controllers/FeedCtrl.js"></script>
   <script src="js/controllers/AuthCtrl.js"></script>
   <script src="js/controllers/HeaderCtrl.js"></script>
-  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="js/controllers/FriendRequestCtrl.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
