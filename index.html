@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="socialapp" ng-strict-di>
 <head>
-    <meta charset="utf-8">
-    <title>SoftUni Social Network by Haralan Dobrev</title>
-    <base href="/">
-    <style>.ng-cloak {display: none}</style>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.css">
+  <meta charset="utf-8">
+  <title>SoftUni Social Network by Haralan Dobrev</title>
+  <base href="/">
+  <style>.ng-cloak {display: none}</style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.css">
 </head>
 <body class="ng-cloak">
-    <div ng-include="'includes/header.html'" ng-controller="HeaderCtrl as header"></div>
-    <a href="logout" ng-if="isLoggedIn" ng-click="logout()">Log out</a>
-    <div class="container">
-        <ng-view></ng-view>
-    </div>
-    <script src="node_modules/angular/angular.js"></script>
-    <script src="node_modules/angular-route/angular-route.js"></script>
-    <script src="node_modules/angular-resource/angular-resource.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/config/BASE.js"></script>
-    <script src="js/config/html5Mode.js"></script>
-    <script src="js/config/http.js"></script>
-    <script src="js/config/redirectToLogin.js"></script>
-    <script src="js/config/routes.js"></script>
-    <script src="js/resources/Session.js"></script>
-    <script src="js/resources/UserRegister.js"></script>
-    <script src="js/resources/Feed.js"></script>
-    <script src="js/services/UnauthorizedInterceptor.js"></script>
-    <script src="js/services/Auth.js"></script>
-    <script src="js/controllers/FeedCtrl.js"></script>
-    <script src="js/controllers/AuthCtrl.js"></script>
-    <script src="js/controllers/HeaderCtrl.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <div ng-include="'includes/header.html'" ng-controller="HeaderCtrl as header"></div>
+  <a href="logout" ng-if="isLoggedIn" ng-click="logout()">Log out</a>
+  <div class="container">
+    <ng-view></ng-view>
+  </div>
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-route/angular-route.js"></script>
+  <script src="node_modules/angular-resource/angular-resource.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/config/BASE.js"></script>
+  <script src="js/config/html5Mode.js"></script>
+  <script src="js/config/http.js"></script>
+  <script src="js/config/redirectToLogin.js"></script>
+  <script src="js/config/routes.js"></script>
+  <script src="js/resources/Session.js"></script>
+  <script src="js/resources/UserRegister.js"></script>
+  <script src="js/resources/Feed.js"></script>
+  <script src="js/services/UnauthorizedInterceptor.js"></script>
+  <script src="js/services/Auth.js"></script>
+  <script src="js/controllers/FeedCtrl.js"></script>
+  <script src="js/controllers/AuthCtrl.js"></script>
+  <script src="js/controllers/HeaderCtrl.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>
